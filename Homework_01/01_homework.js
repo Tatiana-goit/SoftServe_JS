@@ -51,27 +51,20 @@
 //   `Перевернутое число будет: ${lastNumber}${secondNumber}${firstNumber}`,
 // )
 
-
-
 // 2 вариант (с дополнительной проверкой по введенной информации)
 
 var num = 0
 while (true) {
-  num = +prompt('Введите трехзначное число')
-  if (num < 100 || num >=1000) {
+  num = prompt('Введите трехзначное число')
+  if ((num < 100 || num >= 1000) || (typeof(num)!==Number)){
     alert('Введите корректное трехзначное число')
-  }else  {
+  } else {
     console.log(
-        `Перевернутое число будет: ${num % 10}${Math.floor(num / 10) % 10}${Math.floor(num / 100)}`,
-      )
-    break};
-  
+      `Перевернутое число будет: ${num % 10}${
+        Math.floor(num / 10) % 10
+      }${Math.floor(num / 100)}`,
+    )
+    break
+  }
 }
 
-// const num = prompt('Введите трехзначное число')
-// const firstNumber = Math.floor(num / 100)
-// const secondNumber = Math.floor(num / 10) % 10
-// const lastNumber = num % 10
-// console.log(
-//   `Перевернутое число будет: ${lastNumber}${secondNumber}${firstNumber}`,
-// )
