@@ -8,16 +8,29 @@
 const ticketNumber = 123321;
 const ticketArray = Array.from('' + ticketNumber).map(Number);
 // const ticketArray=Array.from(ticketNumber.toString(), Number);
-// const ticketArray=[...''+ticketNumber].map(Number)
+// const ticketArray = [...('' + ticketNumber)].map(Number)
 
 let firstPart = 0;
 let secondPart = 0;
 
+// 1 Вариант
+// for (let i = 0; i <= 2; i++) {
+//   firstPart += ticketArray[i]
+// }
+// for (let i = 3; i <= 5; i++) {
+//   secondPart += ticketArray[i]
+// }
+
+// 2 вариант
+// for (let i = 0, j = 3; i <= 2; i++, j++) {
+//   firstPart += ticketArray[i]
+//   secondPart += ticketArray[j]
+// }
+
+// 3 вариант
 for (let i = 0; i <= 2; i++) {
-  firstPart += ticketArray[i]
-}
-for (let i = 3; i <= 5; i++) {
-  secondPart += ticketArray[i]
+  firstPart += ticketArray[i];
+  secondPart += ticketArray[i+3];
 }
 
 if (firstPart === secondPart) {
