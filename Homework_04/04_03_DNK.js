@@ -8,33 +8,47 @@
 // DNA_strand("GTAT") # повертає "CATA"
 
 function changeDNK(str) {
-  if (str.length !== 0) {
-    const arrayDNK = str.split('')
-    let newArrayDNK = []
-
-    for (let i = 0; i < arrayDNK.length; i++) {
-      switch (arrayDNK[i]) {
-        case 'A':
-          newArrayDNK.push('T')
-          break
-        case 'T':
-          newArrayDNK.push('A')
-          break
-        case 'C':
-          newArrayDNK.push('G')
-          break
-        case 'G':
-          newArrayDNK.push('C')
-          break
-        default:
-          console.log('Что-то не так со стрoкой')
-          break
-      }
-    }
-    return newArrayDNK.join('')
-  } else return 'Ваша страка пуста'
+  const dictionary = {
+    A: 'T',
+    T: 'A',
+    C: 'G',
+    G: 'C',
+  };
+  return str.replace(/[ATGC]/g, rep => dictionary[rep]);
 }
 
-console.log(changeDNK('ATTGC'))
-console.log(changeDNK('GTAT'))
-console.log(changeDNK(''))
+console.log(changeDNK('ATTGC'));
+console.log(changeDNK('GTAT'));
+
+// 2 вариант
+// function changeDNK(str) {
+//   if (str.length !== 0) {
+//     const arrayDNK = str.split('')
+//     let newArrayDNK = []
+
+//     for (let i = 0; i < arrayDNK.length; i++) {
+//       switch (arrayDNK[i]) {
+//         case 'A':
+//           newArrayDNK.push('T')
+//           break
+//         case 'T':
+//           newArrayDNK.push('A')
+//           break
+//         case 'C':
+//           newArrayDNK.push('G')
+//           break
+//         case 'G':
+//           newArrayDNK.push('C')
+//           break
+//         default:
+//           console.log('Что-то не так со стрoкой')
+//           break
+//       }
+//     }
+//     return newArrayDNK.join('')
+//   } else return 'Ваша страка пуста'
+// }
+
+// console.log(changeDNK('ATTGC'))
+// console.log(changeDNK('GTAT'))
+// console.log(changeDNK(''))

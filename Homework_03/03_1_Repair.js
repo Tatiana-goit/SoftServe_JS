@@ -4,7 +4,14 @@
 // Вхідні дані три натуральні числа L, W, H – довжину, ширину та висоту офісу в метрах відповідно, кожне з яких не перевищує 1000.
 // Вихідні дані мінімальна кількість банок фарби, необхідні для фарбування стін в офісі.
 
-function countCups(l,w,h){
-    return Math.ceil(((l+w)*h*2)/16);
+function countCups(l, w, h) {
+  return Math.ceil(((l + w) * h * 2) / 16);
 }
-console.log('Для покраски нужно', countCups(30,40,3),'банок');
+console.log('Для покраски нужно', countCups(30, 40, 3), 'банок');
+
+// const paint = (l, w, h) => ~~(l*h/8+w*h*/8) + 1;
+
+// const paint = (l, w, h) => l * w * h;
+// console.log(paint(5, 4, 2));
+
+// console.log(55555);
