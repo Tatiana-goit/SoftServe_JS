@@ -5,6 +5,6 @@
 // Вихідні дані мінімальна кількість банок фарби, необхідні для фарбування стін в офісі.
 
 function countCups(l,w,h){
-    return Math.ceil(((l+w)*h)/16);
+    return Math.ceil(((l+w)*h*2)/16);
 }
 console.log('Для покраски нужно', countCups(30,40,3),'банок');

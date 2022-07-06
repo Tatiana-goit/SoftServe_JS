@@ -9,13 +9,13 @@
 // Вихідні дані Єдине ціле число – суму у гривнях, яку зможуть співробітники заробити у разі найкращого для себе заповнення ємностей піском.
 
 function findBestIncome(a1, a2, a3, b1, b2, b3) {
-  let bestResult = 0
-  const arrayOfMoney = [a1, a2, a3].sort((a, b) => a - b)
-  const arrayOfWeight = [b1, b2, b3].sort((a, b) => a - b)
+  let bestResult = 0;
+  const arrayOfMoney = [a1, a2, a3].sort((a, b) => a - b);
+  const arrayOfWeight = [b1, b2, b3].sort((a, b) => a - b);
   for (let i = 0; i < 3; i++) {
     bestResult += arrayOfMoney[i] * arrayOfWeight[i]
   }
-  return bestResult
+  return bestResult;
 }
 
 console.log('Максимальный заработок =',findBestIncome(10, 20, 30, 2, 5, 10),'грн')

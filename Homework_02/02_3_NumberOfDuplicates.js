@@ -60,7 +60,7 @@ function countChars(data) {
 // console.log(countChars('abcde'));
 // console.log(countChars('aabbcde'));
 // console.log(countChars('aabBcde'));
-console.log(countChars('indivisibility'))
+// console.log(countChars('indivisibility'))
 // console.log(countChars('aabBIndivisibilitiescde'));
 // console.log(countChars('aA11'));
 // console.log(countChars('ABBA'));
