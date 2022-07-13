@@ -20,8 +20,7 @@ const findShotestWord = str =>
 console.log(
   findShotestWord('bitcoin take over the world maybe who knows perhaps'),
 );
-console.log(findShotestWord('i want to travel the world writing code one day'));
-console.log(findShotestWord('Lets all go on holiday somewhere very cold'));
+
 
 // 2 вариант
 // function findShotestWord(str) {
