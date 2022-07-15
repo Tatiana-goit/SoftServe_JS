@@ -7,7 +7,7 @@ function Calculator(a, b, sign) {
 
 console.log(Calculator(12, 4, '+'));
 console.log(Calculator(1, 4, '-'));
-console.log(Calculator(12, 5, '/'));
+console.log(Calculator(12, 0, '/'));
 console.log(Calculator(1.2, 3, '*'));
 
 
