@@ -293,10 +293,183 @@
 // Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString». То есть дефисы удаляются, а все слова после них получают заглавную букву.
 // P.S. Подсказка: используйте split, чтобы разбить строку на массив символов, потом переделайте всё как нужно и методом join соедините обратно.
 
-function camelize(str) {
-  return str
-    .split('-')
-    .map((el, index) => (index == 0 ? el : el[0].toUpperCase() + el.slice(1))).join('')
-}
+// function camelize(str) {
+//   return str
+//     .split('-')
+//     .map((el, index) => (index == 0 ? el : el[0].toUpperCase() + el.slice(1))).join('')
+// }
 
-console.log(camelize('list-style-image'));
+// console.log(camelize('list-style-image'));
+
+// Фильтрация по диапазону
+// Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
+// Функция должна возвращать новый массив и не изменять исходный.
+// Например:
+
+// let arr = [5, 3, 8, 1, 3, 2, 5, 4, 9, 5];
+// function filterRange(arr, a, b) {
+//   let newArray = arr.filter(el => el >= a && el <= b);
+//   return newArray;
+// }
+
+// console.log(filterRange(arr, 1, 5));
+
+// Фильтрация по диапазону "на месте"
+// Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+// Функция должна изменять принимаемый массив и ничего не возвращать.
+
+// let arr = [5, 3, 8, 4, 1, -8];
+// function filterRangeInPlace(arr, a, b) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < a || arr[i] > b) {
+//       arr.splice(i, 1);
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(filterRangeInPlace(arr, 1, 4));
+
+// Скопировать и отсортировать массив
+// У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+// Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+
+// function copySorted(arr) {
+//   return arr.slice().sort()
+// }
+// console.log(copySorted(arr))
+// console.log(arr);
+
+// Создать расширяемый калькулятор
+
+// function Calculator() {
+
+//   this.methods = {
+//     "-": (a, b) => a - b,
+//     "+": (a, b) => a + b
+//   };
+
+//   this.calculate = function(str) {
+
+//     let split = str.split(' '),
+//       a = +split[0],
+//       op = split[1],
+//       b = +split[2]
+
+//     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//     }
+
+//     return this.methods[op](a, b);
+//   }
+
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   };
+// }
+
+// let calc = new Calculator;
+
+// console.log(calc.calculate("3 + 7") ); // 10
+// console.log(calc.calculate("3 - 7") )
+
+// let powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+
+// let result = powerCalc.calculate("2 ** 3");
+// console.log( result ); // 8
+
+// console.log(powerCalc.methods);
+
+// Трансформировать в массив имён
+// У вас есть массив объектов user, и в каждом из них есть user.name. Напишите код, который преобразует их в массив имён.
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [ vasya, petya, masha ];
+// console.log(users);
+
+// let names = users.map(el => el.name)
+
+// console.log( names ); // Вася, Петя, Маша
+
+// Трансформировать в объекты
+//  У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+// Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [ vasya, petya, masha ];
+
+// let usersMapped = users.map(user => ({
+//   fullName: `${user.name} ${user.surname}`,
+//   id: user.id}
+// ))
+
+// console.log(usersMapped);
+// console.log( usersMapped[0].id ) // 1
+// console.log( usersMapped[0].fullName ) // Вася Пупкин
+
+// Отсортировать пользователей по возрасту
+// Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
+
+// let vasya = { name: 'Вася', age: 25 };
+// let petya = { name: 'Петя', age: 30 };
+// let masha = { name: 'Маша', age: 28 };
+
+// let arr = [vasya, petya, masha];
+
+// function sortByAge(arr) {
+//   arr.sort((a,b) => a.age - b.age);
+//   return arr
+// }
+
+// console.log(sortByAge(arr));
+
+// Получить средний возраст
+// Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
+// let vasya = { name: 'Вася', age: 25 };
+// let petya = { name: 'Петя', age: 30 };
+// let masha = { name: 'Маша', age: 29 };
+
+// let arr = [vasya, petya, masha];
+
+// function getAverageAge(arr) {
+//   return arr.reduce((sum, el) => sum + el.age, 0) / arr.length;
+// }
+
+// console.log(getAverageAge(arr)); //  28
+
+
+
+// Оставить уникальные элементы массива
+// Пусть arr – массив строк.
+// Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr.
+
+// function unique(arr) {
+//   let newArray = [];
+//   arr.forEach(el => {
+//     if (!newArray.includes(el)) {
+//       newArray.push(el)
+//     }
+//   })
+//    return newArray
+// }
+
+// function unique(arr) {
+//   return Array.from(new Set(arr))
+// }
+
+// let strings = ["кришна", "кришна", "харе", "харе",
+//   "харе", "харе", "кришна", "кришна", ":-O"
+// ];
+
+// console.log( unique(strings) ); // кришна, харе, :-O

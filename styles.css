@@ -1,0 +1,76 @@
+.home {
+  display: block;
+  margin-top: 100px;
+  text-align: right;
+}
+
+.container {
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+}
+
+.name {
+  width: 400px;
+  padding: 4px;
+  font-size: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.visible {
+  display: block;
+}
+
+.modal-content {
+  width: 400px;
+  height: 140px;
+  text-align: center;
+  background-color: #fefefe;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.close {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+}
+
+.button-open {
+  display: block;
+  margin: 40px auto;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button-close {
+  width: 250px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.clock {
+  font-size: 30vh;
+  font-weight: 900;
+  text-align: center;
+}
+
+.dateInfo {
+  font-size: 10vh;
+  text-align: right;
+}
