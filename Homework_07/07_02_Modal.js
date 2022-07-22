@@ -5,7 +5,7 @@ const close = document.querySelector('.close');
 
 btnOpen.addEventListener('click', openModal);
 btnClose.addEventListener('click', closeModal);
-close.addEventListener("click", closeModal)
+close.addEventListener('click', closeModal);
 
 function openModal() {
   modal.classList.add('visible');
