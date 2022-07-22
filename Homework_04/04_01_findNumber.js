@@ -5,8 +5,7 @@
 function findNumber(a, b) {
   for (let i = a; i <= b; i++) {
     if (i % 11 === 0) {
-      console.log(i);
-    }
+      console.log(i);}
   }
 }
 
