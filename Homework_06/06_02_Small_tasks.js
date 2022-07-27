@@ -65,9 +65,9 @@ function statistic(str) {
   let numberOfDigits = 0;
   let numberOfOther = 0;
 
-  const letters = str.match(/[a-zA-Zа-яА-Я]/g);
-  const digits = str.match(/[0-9]/g);
-  const other = str.match(/[^\d\sA-Z]/gi);
+  const letters = str.match(/[a-zа-я]/gi);
+  const digits = str.match(/\d/g);
+  const other = str.match(/\W/g);
 
   if (letters !== null) {
     numberOfLetters = letters.length;
@@ -89,7 +89,7 @@ console.log(statistic('%5%5%'));
 // Написати функцію, яка замінює в отриманому рядку великі літери на маленькі, малі – на великі, а цифри – на знак нижнього підкреслення.
 function change(str) {
   const result = str
-    .replace(/\s/g, '_')
+    .replace(/\d/g, '_')
     .split('')
     .map(symbol => {
       return symbol === symbol.toLowerCase()
