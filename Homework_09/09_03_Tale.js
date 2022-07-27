@@ -7,10 +7,15 @@
 // Рядок - один символ для заміни
 // Вихідні дані: Рядок - смішний рядок
 
-function funnyTale(str) {
-    return str.replace(/[иа]/g, "у")
+const btnTale = document.querySelector('.button__tale');
+
+btnTale.addEventListener('click', showTranslate);
+
+function showTranslate() {
+  const str = document.querySelector('.input__tale').value;
+  const newStr = str.replace(/[аи]/g, 'у');
+  document.querySelector('.text-result__tale').innerHTML = newStr;
 }
 
-const str = "Попелюшка принесла ящірок, і чарівниця обернула їх на шістьох лакеїв у строкатих лівреях; вони стрибнули на приступку позад карети, та так спритно, ніби за своє життя нічого іншого й не робили."
-console.log(str);
-console.log(funnyTale(str));
+const example =
+  'Попелюшка принесла ящірок, і чарівниця обернула їх на шістьох лакеїв у строкатих лівреях; вони стрибнули на приступку позад карети, та так спритно, ніби за своє життя нічого іншого й не робили.';

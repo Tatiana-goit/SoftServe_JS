@@ -14,7 +14,7 @@ function identification (passportID, phone, identificationCode) {
     let statusPhone = "NOT OK";
     let statusIdentificationCode = "NOT OK";
 
-    if (/[A-Z]{2}[0-9]{6}/.test(passportID)) {
+    if (/^[A-Z]{2}[0-9]{6}$/.test(passportID)) {
         statusPassportID = "OK"
     } 
 
@@ -29,7 +29,7 @@ function identification (passportID, phone, identificationCode) {
     return ` passportID - ${statusPassportID} \n phone - ${statusPhone} \n identification code - ${statusIdentificationCode}`
 }
 
-const passportID = "FJ502038";
+const passportID = "222FJ502038";
 const phone = "+38(097)163-80-80";
 const identificationCode = "3697456988"
 console.log(identification(passportID, phone, identificationCode));
