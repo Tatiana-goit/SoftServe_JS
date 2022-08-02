@@ -12,11 +12,24 @@ let interval;
 let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
+let circleMilliseconds = 0;
+let circleSeconds = 0;
+let circleMinutes = 0;
 
 startBtn.addEventListener('click', () => {
   clearInterval(interval);
+  
+  circleResult.insertAdjacentHTML(
+    'beforeend',
+    `<p> </p>`,
+  );
+
+  minutesElm.innerText = '00';
+  secondsElm.innerText = '00';
+  millisecondsElm.innerText = '00';
   interval = setInterval(() => {
     milliseconds++;
+
 
     if (milliseconds <= 9) {
       millisecondsElm.innerText = '0' + milliseconds;
@@ -65,11 +78,15 @@ stopBtn.addEventListener('click', () => {
 });
 
 circleBtn.addEventListener('click', () => {
-    if (minutes <= 9) {minutes = '0' + minutes;}
-    if (seconds <= 9) {seconds = '0' + seconds;}
-    if (milliseconds <= 9) {milliseconds = '0' + milliseconds   ;}
+  minutes <= 9 ? (circleMinutes = '0' + minutes) : (circleMinutes = minutes);
+  seconds <= 9 ? (circleSeconds = '0' + seconds) : (circleSeconds = seconds);
+  milliseconds <= 9
+    ? (circleMilliseconds = '0' + milliseconds)
+    : (circleMilliseconds = milliseconds);
 
-
-    circleResult.innerHTML = `${minutes}:${seconds}:${milliseconds}`
+  circleMilliseconds;
+  circleResult.insertAdjacentHTML(
+    'beforeend',
+    `<p>${circleMinutes}:${circleSeconds}:${circleMilliseconds}</p>`,
+  );
 });
-
